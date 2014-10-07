@@ -69,4 +69,15 @@ describe('Iterators', function () {
       expect(Iterators.filter([1,2,3,4,5,6], odd)).to.deep.equal([1,3,5]);
     });
   });
+
+  describe('#reduce', function () {
+    it('should accumulate over an array', function () {
+      var add = function (a, b) {
+        return a + b
+      };
+      expect(Iterators.reduce([1,2,3,4], add)).to.equal(10);
+      expect(Iterators.reduce([1,2,3,4], add, 0)).to.equal(10);
+      expect(Iterators.reduce([1,2,3,4], add, 1)).to.equal(11);
+    });
+  });
 });

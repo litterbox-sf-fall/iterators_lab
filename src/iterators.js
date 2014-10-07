@@ -38,6 +38,18 @@ var Iterators = (function() {
         }
       }
       return output;
+    },
+    reduce: function (list, callback, accumulator) {
+      if (typeof accumulator === "undefined") {
+        var copy = list.concat();
+        var first = copy.shift();
+        return Iterators.reduce(copy, callback, first);
+      } else {
+        for (var i = 0; i < list.length; i++) {
+          accumulator = callback(list[i], accumulator);
+        }
+        return accumulator;
+      }
     }
   };
 
