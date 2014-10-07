@@ -50,6 +50,11 @@ var Iterators = (function() {
         }
         return accumulator;
       }
+    },
+    reject: function (list, callback) {
+      return Iterators.filter(list, function (item) {
+        return !callback(item);
+      });
     }
   };
 

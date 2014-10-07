@@ -80,4 +80,17 @@ describe('Iterators', function () {
       expect(Iterators.reduce([1,2,3,4], add, 1)).to.equal(11);
     });
   });
+
+  describe('#reject', function () {
+    it('should reject elements that fail test', function () {
+      var even = function (num) {
+        return num % 2 === 0;
+      }
+      var odd = function (num) {
+        return num % 2 !== 0;
+      };
+      expect(Iterators.reject([1,2,3,4], even)).to.deep.equal([1,3]);
+      expect(Iterators.reject([1,2,3,4], odd)).to.deep.equal([2,4]);
+    });
+  });
 });
