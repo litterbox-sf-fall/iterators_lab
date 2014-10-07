@@ -17,6 +17,11 @@ var Iterators = (function() {
         }
       }
       return min;
+    },
+    each: function (list, callback) {
+      for (var i = 0; i < list.length; i++) {
+        callback(list[i]);
+      }
     }
   };
 

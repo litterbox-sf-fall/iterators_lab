@@ -26,4 +26,20 @@ describe('Iterators', function () {
       expect(Iterators.min([])).to.equal(Infinity);
     });
   });
+
+  describe('#each', function () {
+    it('should run a function for each element', function () {
+      var total = 0;
+      Iterators.each([1,2,3], function (num) {
+        total += num;
+      });
+      expect(total).to.equal(6);
+
+      var product = 1;
+      Iterators.each([2,3,4], function (num) {
+        product = product * num;
+      });
+      expect(product).to.equal(24);
+    });
+  });
 });
