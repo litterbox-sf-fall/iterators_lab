@@ -29,6 +29,15 @@ var Iterators = (function() {
         output.push(callback(list[i]));
       }
       return output;
+    },
+    filter: function (list, callback) {
+      var output = [];
+      for (var i = 0; i < list.length; i++) {
+        if (callback(list[i])) {
+          output.push(list[i]);
+        }
+      }
+      return output;
     }
   };
 
