@@ -42,4 +42,18 @@ describe('Iterators', function () {
       expect(product).to.equal(24);
     });
   });
+
+  describe('#map', function () {
+    it('should return an array of results', function () {
+      var timesTwo = function (num) {
+        return num * 2;
+      };
+      var plusThree = function (num) {
+        return num + 3;
+      };
+
+      expect(Iterators.map([1,2,3], timesTwo)).to.deep.equal([2,4,6]);
+      expect(Iterators.map([2,3,4], plusThree)).to.deep.equal([5,6,7]);
+    });
+  });
 });

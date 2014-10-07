@@ -22,6 +22,13 @@ var Iterators = (function() {
       for (var i = 0; i < list.length; i++) {
         callback(list[i]);
       }
+    },
+    map: function (list, callback) {
+      var output = [];
+      for (var i = 0; i < list.length; i++) {
+        output.push(callback(list[i]));
+      }
+      return output;
     }
   };
 
